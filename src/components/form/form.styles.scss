@@ -1,0 +1,20 @@
+@import "../../styles/global.scss";
+
+$form-padding: 2rem;
+$form-background-color: white;
+$form-border-radius: 0.5rem;
+
+form {
+    position: relative;
+    padding: $form-padding;
+    background: $form-background-color;
+    border-radius: $form-border-radius;
+
+    @include respond(phone) {
+        width: 80vw;
+    }
+    @include flex-align-column(base-middle);
+    .form-btn {
+        padding: 2rem 0;
+    }
+}

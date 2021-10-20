@@ -1,0 +1,53 @@
+@import "../../styles/global.scss";
+
+$border-radius: none;
+$box-shadow: none;
+$container-padding: 0.5rem;
+$accordion-padding: 1.5rem;
+$background-color: none;
+
+.accordion {
+    width: 100%;
+    background-color: $background-color;
+    color: $primary-2;
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: $accordion-padding;
+
+    &.no-padding {
+        padding: 0;
+    }
+
+    &.white {
+        color: $primary-1;
+    }
+
+    .accordion__header-container {
+        display: flex;
+        align-items: center;
+        transition: $transition;
+
+        .accordion__header {
+            margin-right: auto;
+        }
+
+        .accordion-icon {
+            transition: transform 0.6s ease;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    }
+
+    .accordion__content-container {
+        overflow: hidden;
+        transition: max-height 0.6s ease;
+
+        &.indented {
+            padding-left: calc(2 * #{$container-padding});
+        }
+    }
+}

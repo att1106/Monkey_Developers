@@ -1,0 +1,75 @@
+@import "../../styles/global.scss";
+
+$footer-elements-margin: 2rem;
+$footer-padding: 1rem 0;
+
+footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $footer-height;
+    width: $footer-width;
+    background: $footer-background-color;
+    padding: $footer-padding;
+    min-width: $min-width;
+
+    @include respond(phone) {
+        height: auto;
+    }
+
+    .footer__body {
+        width: $body-width;
+        height: 80%;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: auto 2rem;
+        grid-template-areas: "socialmedia footerlinks" "footerinfo footerinfo";
+
+        @include respond(phone) {
+            height: auto;
+            grid-template-columns: 100%;
+            grid-template-rows: auto auto 2rem;
+            grid-template-areas: "socialmedia" "footerlinks" "footerinfo";
+        }
+
+        .footer__social-media {
+            grid-area: socialmedia;
+            display: flex;
+            align-items: flex-start;
+
+            @include respond(phone) {
+                margin-bottom: $footer-elements-margin;
+                justify-content: center;
+            }
+
+            .footer__social-media--item {
+                padding: 0 0.5rem;
+            }
+        }
+
+        .footer__links {
+            grid-area: footerlinks;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: flex-end;
+
+            @include respond(phone) {
+                margin-bottom: $footer-elements-margin;
+                align-items: center;
+            }
+
+            .footer__link {
+                padding: 0.2rem;
+            }
+        }
+
+        .footer__information {
+            grid-area: footerinfo;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

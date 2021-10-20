@@ -1,0 +1,24 @@
+@import "../../styles/global.scss";
+
+$background-color: $primary-3;
+$box-padding: 1rem;
+$box-radius: 0.5rem;
+$box-min-width: 14rem;
+$box-shadow: none;
+
+.sub-link__box {
+    position: absolute;
+    top: 2.5rem;
+    left: -150%;
+    background-color: $background-color;
+    box-shadow: $box-shadow;
+    padding: $box-padding;
+    border-radius: $box-radius;
+    min-width: $box-min-width;
+    @include flex-align-column(base-left);
+
+    .sub-link__link {
+        padding: 0.5rem;
+    }
+
+}

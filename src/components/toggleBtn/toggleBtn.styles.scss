@@ -1,0 +1,19 @@
+@import "../../styles/global.scss";
+
+.toggle-btn {
+    display: none;
+
+    @include respond(phone) {
+        display: flex;
+        font-size: 2rem;
+        background: transparent;
+        border-color: transparent;
+        color: $primary-1;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            color: $primary-3;
+        }
+    }
+}

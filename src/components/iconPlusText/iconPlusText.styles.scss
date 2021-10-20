@@ -1,0 +1,33 @@
+@import "../../styles/global.scss";
+
+$icon-width: 3rem;
+$icon-plus-text-height: auto;
+$icon-plus-text-min-width: 8rem;
+$icon-plus-text-padding: 0.5rem;
+$text-padding: 0.2rem;
+
+.icon-plus-text {
+    display: flex;
+    height: $icon-plus-text-height;
+    padding: $icon-plus-text-padding;
+
+    .icon__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $icon-width;
+        height: auto;
+    }
+    .text__box {
+        min-width: $icon-plus-text-min-width;
+        @include flex-align-column(base-left);
+
+        span {
+            padding: $text-padding;
+        }
+
+        .text__box--main {
+            font-weight: bold;
+        }
+    }
+}

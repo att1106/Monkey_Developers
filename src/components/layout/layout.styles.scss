@@ -1,0 +1,16 @@
+@import "../../styles/global.scss";
+
+.company-logo_container {
+    grid-area: "header";
+    width: 100%;
+    @include flex-align-column(base-middle);
+    .company-logo {
+        @include flex-align-column(base-middle);
+        width: 15rem;
+        height: 5rem;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

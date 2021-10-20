@@ -1,0 +1,71 @@
+@import "../../styles/global.scss";
+
+$img-modal-width: 80%;
+$img-modal-height: 80%;
+$img-modal-background-color: $primary-1;
+$img-modal-padding: 2.5rem;
+$img-modal-radius: 1rem;
+
+.img-modal__container {
+    position: relative;
+    width: $img-modal-width;
+    height: $img-modal-height;
+    background: $img-modal-background-color;
+    padding: $img-modal-padding;
+    border-radius: $img-modal-radius;
+    z-index: 11;
+
+    @include respond(phone) {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .img-modal__btn {
+        position: absolute;
+        top: 0.6rem;
+        right: 0.6rem;
+        font-size: 1.5rem;
+        background: transparent;
+        border-color: transparent;
+        color: $primary-2;
+        cursor: pointer;
+    }
+    .img-modal__wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .img-modal {
+            height: auto;
+            width: auto;
+            max-height: 100%;
+            max-width: 100%;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            // div {
+            //     height: auto;
+            //     width: auto;
+            //     max-height: 100%;
+            //     max-width: 100%;
+            // }
+
+            img {
+                height: auto;
+                width: auto;
+                max-height: 100%;
+                max-width: 100%;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import "../../styles/global.scss";
+
+$image-path: "../../images/pexels-photo-6072557.jpeg";
+$filter: grayscale(20%);
+$height: 45rem;
+$width: 100vw;
+
+.image-background {
+    position: relative;
+    background-image: url($image-path);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: $filter;
+    height: $height;
+    width: $width;
+    color: white;
+    font-size: 10rem;
+}

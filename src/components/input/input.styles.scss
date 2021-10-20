@@ -1,0 +1,51 @@
+@import "../../styles/global.scss";
+
+$input-background-color: white;
+
+.input-form {
+    width: 100%;
+    margin: 0.5rem 0;
+    .input-field {
+        display: flex;
+        align-items: center;
+        border: $input-border-box;
+        margin-top: 0.3rem;
+        padding: 0.5rem;
+        height: $input-height;
+        border-radius: $input-border-radius;
+        background: $input-background-color;
+
+        &.textarea-field {
+            height: 10rem;
+        }
+
+        input,
+        textarea {
+            font-size: 0.9rem;
+            border: none;
+            width: 95%;
+            font-family: inherit;
+            background: none;
+            &:focus {
+                outline: none;
+            }
+        }
+
+        textarea {
+            resize: none;
+            height: 100%;
+            width: 100%;
+        }
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+.input-label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}

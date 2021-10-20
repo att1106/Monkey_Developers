@@ -1,0 +1,93 @@
+@import "../../styles/global.scss";
+
+$link-color: $primary-1;
+$reponsive-link-color: $primary-2;
+$sub-links-transition: $transition;
+
+.navbar {
+    grid-area: header;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-width: $min-width;
+    height: $navbar-height;
+    background: $navbar-background-color;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.open {
+        position: fixed;
+    }
+
+    .navbar__body {
+        width: $body-width;
+        max-width: $max-width;
+
+        @include respond(desktop) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar__header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include respond(phone) {
+                justify-content: space-between;
+            }
+
+            img {
+                width: $logo-width;
+                cursor: pointer;
+            }
+        }
+
+        .navbar__links {
+            display: flex;
+            justify-content: flex-end;
+
+            @include respond(phone) {
+                display: none;
+            }
+
+            .navbar__link--wrapper {
+                display: flex;
+                margin: 0 1rem;
+                padding: 0.5rem 0;
+                position: relative;
+
+                .navbar__link {
+                    text-transform: capitalize;
+                    color: $primary-1;
+                    font-weight: bold;
+                    letter-spacing: $letter-spacing;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $primary-2;
+                        box-shadow: 0px 2px $primary-2;
+                    }
+                }
+
+                .navbar__sublink {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    .navbar__sublink {
+                        visibility: visible;
+                        opacity: 100%;
+                        transition: $sub-links-transition;
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,49 @@
+@import "../../styles/global.scss";
+
+$img-padding: 1rem;
+$gallery-height: auto;
+$gallery-width: 100%;
+$img-height: 20rem;
+$gallery-padding: 0;
+$m-gallery-padding: 0.5rem;
+$t-gallery-padding: 2rem;
+
+.image-gallery {
+    padding: $gallery-padding;
+    height: $gallery-height;
+    width: $gallery-width;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: $img-padding;
+
+    @include respond(phone) {
+        grid-template-columns: 1fr;
+        padding: $m-gallery-padding;
+    }
+
+    @include respond(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        padding: $t-gallery-padding;
+    }
+
+    .image-gallery__item {
+        background: black;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        .image {
+            object-fit: contain;
+            width: 100%;
+            height: $img-height;
+            transition: all 1.5s ease-out;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}

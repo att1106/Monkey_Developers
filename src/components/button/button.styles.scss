@@ -1,0 +1,33 @@
+@import "../../styles/global.scss";
+
+$btn-color: $primary-1;
+$btn-background: $primary-2;
+$btn-hover-opacity: 60%;
+$btn-padding: 0.5rem;
+$btn-radius: 0.8rem;
+$btn-min-width: 6rem;
+$btn-box-shadow: none; 
+$btn-border: $box-border;
+
+
+.button {
+    display: inline-block;
+    text-align: center;
+    padding: $btn-padding;
+    color: $btn-color;
+    background: $btn-background;
+    border-radius: $btn-radius;
+    min-width: $btn-min-width;
+    box-shadow: $btn-box-shadow;
+    border: $btn-border;
+    cursor: pointer;
+
+    &.outline {
+        background: $btn-color;
+        color: $btn-background;
+    }
+
+    &:hover {
+        opacity: $btn-hover-opacity;
+    }
+}

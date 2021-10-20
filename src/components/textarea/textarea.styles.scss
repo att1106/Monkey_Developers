@@ -1,0 +1,39 @@
+@import "../../styles/global.scss";
+
+.input-form {
+    width: 100%;
+    .textarea-field {
+        display: flex;
+        align-items: center;
+        border: $input-border-box;
+        padding: 0 0.5rem;
+        height: $input-height;
+        border-radius: $input-border-radius;
+        height: 10rem;
+
+        textarea {
+            border: none;
+            width: 95%;
+            &:focus {
+                outline: none;
+            }
+        }
+
+        textarea {
+            resize: none;
+            height: 100%;
+            width: 100%;
+        }
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+.input-label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}

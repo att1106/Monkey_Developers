@@ -1,0 +1,33 @@
+@import "../../styles/global.scss";
+
+$link-color: $primary-2;
+$link-hover-color: $primary-3;
+$navbar-links-padding: 1.5rem;
+
+.navbar__links-modal {
+    display: flex;
+    width: 100%;
+    padding: $navbar-links-padding;
+    @include flex-align-column(base-left);
+
+    .navbar__link-modal {
+        display: inline-block;
+        color: $link-color;
+        padding: 1rem;
+        transition: $transition;
+
+        &:hover {
+            color: $link-hover-color;
+            @include underline-font($link-hover-color);
+        }
+    }
+
+    .navbar__sublinks-modal {
+        @include flex-align-column(base-left);
+
+        .navbar__sublink-modal {
+            color: $link-color;
+            padding: 0.5rem;
+        }
+    }
+}

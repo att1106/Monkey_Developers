@@ -1,0 +1,9 @@
+@import "../../styles/global.scss";
+
+.map__container {
+    width: 100%;
+    .map {
+        width: 100%;
+        height: 20rem;
+    }
+}
