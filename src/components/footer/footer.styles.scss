@@ -1,7 +1,7 @@
 @import "../../styles/global.scss";
 
 $footer-elements-margin: 2rem;
-$footer-padding: 1rem 0;
+$footer-padding: 1rem;
 
 footer {
     grid-area: footer;
@@ -13,6 +13,7 @@ footer {
     background: $footer-background-color;
     padding: $footer-padding;
     min-width: $min-width;
+    max-width: 100%;
 
     @include respond(phone) {
         height: auto;
@@ -66,6 +67,7 @@ footer {
         }
 
         .footer__information {
+            color: white;
             grid-area: footerinfo;
             display: flex;
             align-items: center;

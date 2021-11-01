@@ -32,7 +32,7 @@ export const footerLinks = [
         text: "Impressum",
     },
     {
-        url: "/",
+        url: "/datenschutzerklaerung",
         text: "Datenschutzerkärung",
     },
     {

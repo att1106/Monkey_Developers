@@ -21,16 +21,13 @@ ul {
   // display: inline;
 }
 
-// li {
-//   margin: 10px 0;
-// }
 
 a {
   text-decoration: none;
   padding: 0.3rem 0;
   color: $primary-1;
-  &:hover {
-    color: set-text-color($primary-1);
+  &:hover, &:visited {
+    color: white;
   }
 }
 
@@ -41,7 +38,7 @@ h4,
 h5 {
   margin: 0;
   margin-bottom: 1rem;
-  line-height: 1.3;
+  line-height: 1.1;
   letter-spacing: $letter-spacing;
 }
 
@@ -98,17 +95,21 @@ body {
   font-family: $font-family;
   color: $primary-2;
   min-width: $min-width;
+
+  width: 65%;
+  overflow: visible;
+  margin-left: 35%;
 }
 
 .page__body {
   height: 100%;
-  display: grid;
-  grid-template-rows: $navbar-height auto $footer-height;
+  // display: grid;
+  // grid-template-rows: $navbar-height auto $footer-height;
 
-  @include respond(phone) {
-    grid-template-rows: $navbar-height auto auto;
-  }
-  grid-template-areas: "header" "main" "footer";
+  // @include respond(phone) {
+  //   grid-template-rows: $navbar-height auto auto;
+  // }
+  // grid-template-areas: "header" "main" "footer";
 }
 
 main {
@@ -141,9 +142,7 @@ main {
   cursor: pointer;
 }
 
-.impressum {
-  padding: 2rem 5rem;
-}
+
 
 .page-element {
   display: flex;

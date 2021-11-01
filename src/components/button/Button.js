@@ -3,9 +3,9 @@ import "./button.styles.scss";
 
 
 const Button = ({
-  btnText = "Button",
+  btnText,
   outline,
-  onClick = () => console.log("Clicked!"),
+  onClick,
 }) => {
   return (
     <div className={`button${outline ? " outline" : ""}`} onClick={onClick}>

@@ -1,0 +1,38 @@
+@import "../../styles/global.scss";
+
+$sidebar-wrapper-width: 35%;
+$sidebar-wrapper-padding: 3rem;
+
+.sidebar-wrapper {
+  color: grey;
+  background-color: $primary-1;
+  padding: $sidebar-wrapper-padding;
+
+  .sidebar-wrapper__about-container{
+      
+   .button {
+       display: block;
+       width: fit-content;
+       margin: 2rem auto;
+
+   }
+  }
+
+
+
+  @include respond(desktop) {
+    position: fixed;
+    width: $sidebar-wrapper-width;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: block;    
+    
+   
+  }
+
+  @include respond(phone) {
+    position: relative;
+  }
+}
