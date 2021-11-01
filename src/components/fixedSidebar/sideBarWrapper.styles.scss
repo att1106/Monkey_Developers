@@ -1,24 +1,21 @@
 @import "../../styles/global.scss";
 
-$sidebar-wrapper-width: 35%;
 $sidebar-wrapper-padding: 3rem;
 
 .sidebar-wrapper {
-  color: grey;
+  color: $primary-2;
   background-color: $primary-1;
+  display: block;
   padding: $sidebar-wrapper-padding;
 
-  .sidebar-wrapper__about-container{
-      
-   .button {
-       display: block;
-       width: fit-content;
-       margin: 2rem auto;
-
-   }
+  &__about-container {
+    .button {
+      display: block;
+      width: fit-content;
+      margin: 4rem auto;
+      background-color: $primary-2;
+    }
   }
-
-
 
   @include respond(desktop) {
     position: fixed;
@@ -27,12 +24,10 @@ $sidebar-wrapper-padding: 3rem;
     left: 0;
     top: 0;
     bottom: 0;
-    display: block;    
-    
-   
   }
 
   @include respond(phone) {
     position: relative;
+    width: 100%;
   }
 }

@@ -21,12 +21,12 @@ ul {
   // display: inline;
 }
 
-
 a {
   text-decoration: none;
   padding: 0.3rem 0;
   color: $primary-1;
-  &:hover, &:visited {
+  &:hover,
+  &:visited {
     color: white;
   }
 }
@@ -96,29 +96,14 @@ body {
   color: $primary-2;
   min-width: $min-width;
 
-  width: 65%;
-  overflow: visible;
-  margin-left: 35%;
-}
-
-.page__body {
-  height: 100%;
-  // display: grid;
-  // grid-template-rows: $navbar-height auto $footer-height;
-
-  // @include respond(phone) {
-  //   grid-template-rows: $navbar-height auto auto;
-  // }
-  // grid-template-areas: "header" "main" "footer";
-}
-
-main {
-  grid-area: main;
-  width: 100%;
-  padding: $main-padding;
+  @include respond(desktop) {
+    overflow: visible;
+    margin-left: $sidebar-wrapper-width;
+  }
 
   @include respond(phone) {
-    padding: $m-main-padding;
+    position: relative;
+    width: 100%;
   }
 }
 
@@ -142,54 +127,11 @@ main {
   cursor: pointer;
 }
 
-
-
-.page-element {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10rem 15%;
-
-  &.negative__color {
-    background-color: $primary-2;
-  }
-
-  &.small-padding {
-    padding: 2rem 15%;
-  }
-
-  @include respond(tablet) {
-    padding: 1rem 10%;
-  }
-
-  @include respond(phone) {
-    padding: 4rem 5%;
-  }
-}
-
 //####### Rich text ordered and unordered list #######
 li > p {
-  line-height: 1.8;  
+  line-height: 1.8;
 }
 
 ol {
   margin-left: 15px;
-}
-
-// ul > li > div {
-//   display: inline-block;
-//   height: 100%;
-// }
-
-.custom-ul-li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.7rem;
-
-  .ul-li__bullet {
-    margin-right: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }

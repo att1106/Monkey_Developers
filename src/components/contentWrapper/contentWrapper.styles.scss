@@ -1,34 +1,40 @@
-.website-example {
-  position: relative;
-  padding: 5% 0;
-  color: white;
+@import "../../styles/global.scss";
+@import "../../styles/mixin";
 
-  .example-image-container {
+$content-wrapper-padding: 5% 0;
+$content-wrapper-icon__size: 1.6rem; 
+
+.example {
+  position: relative;
+  padding: $content-wrapper-padding;
+  color: $primary-1;
+
+  &-image-container {
     max-width: 75%;
-  
     display: block;
-    margin: 0 auto 3%;
+    margin: 0 auto 5% auto;
   }
 
-  .example-text-container {
-    margin: 0 5%;
-    .example-title {
+  &-text {
+    margin: 0 12.5%;
+    &__title {
       font-weight: 700;
     }
-    .example-title,
-    .example-description {
+    &__title,
+    &__description {
       font-size: 0.9rem;
     }
   }
-  .example-url {
+  &-url {
     position: absolute;
-    font-size: 1.6rem;
+    font-size: $content-wrapper-icon__size;
     text-align: end;
     right: 3%;
     bottom: 1%;
 
     &:hover {
-        transform: rotate(15deg);
+      @include transition-ease;
+      transform: rotate(15deg);
     }
   }
 }
