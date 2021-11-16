@@ -3,91 +3,113 @@
 $link-color: $primary-1;
 $reponsive-link-color: $primary-2;
 $sub-links-transition: $transition;
+$navbar-width: 70%;
+$navbar-postition: fixed;
+$navbar-zIndex: 2000;
+$navbar-top: 0;
+$navbar-right: 0;
+// $navbar-left: 0;
+$logo-width: 50px;
 
 .navbar {
-    grid-area: header;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
+  grid-area: header;
+  position: $navbar-postition;
+  opacity: 80%;
+  z-index: $navbar-zIndex;
+  display: flex;
+  align-items: flex-start;
+  top: $navbar-top;
+  right: $navbar-right;
+  transition: top 0.6s;
+  // left: $navbar-left;
+  height: $navbar-height;
+  background: $primary-2;
+
+  @include respond(desktop) {
+    width: $navbar-width;
     min-width: $min-width;
+    justify-content: space-between;
+  }
+
+  @include respond(mobile) {
     height: $navbar-height;
-    background: $navbar-background-color;
-    z-index: 10;
-    display: flex;
-    align-items: center;
+    width: $navbar-height;
+    right: 1rem;
+    margin-top: 1rem;
     justify-content: center;
+    align-items: center;
+    padding: 0 auto;
+    max-width: $navbar-height;
+    border-radius: 50%;
+  }
 
-    &.open {
-        position: fixed;
+  &.open {
+    position: fixed;
+  }
+  &.notshow {
+    top: -$navbar-height - 2rem;
+  }
+
+  .navbar__body {
+    // width: 100%;
+    max-width: $max-width;
+
+    .navbar__header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @include respond(desktop) {
+        justify-content: space-between;
+      }
+
+      img {
+        width: $logo-width;
+        cursor: pointer;
+      }
     }
 
-    .navbar__body {
-        width: $body-width;
-        max-width: $max-width;
+    .navbar__links {
+      display: flex;
+      justify-content: flex-end;
 
-        @include respond(desktop) {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+      @include respond(mobile) {
+        display: none;
+      }
+
+      .navbar__link--wrapper {
+        display: flex;
+        margin: 0 1rem;
+        padding: 0.5rem 0;
+        position: relative;
+
+        .navbar__link {
+          text-transform: capitalize;
+          color: $primary-1;
+          font-weight: bold;
+          letter-spacing: $letter-spacing;
+          transition: $transition;
+
+          &:hover {
+            text-decoration: underline;
+            // color: $primary-2;
+            box-shadow: 0px 2px $primary-2;
+          }
         }
 
-        .navbar__header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            @include respond(phone) {
-                justify-content: space-between;
-            }
-
-            img {
-                width: $logo-width;
-                cursor: pointer;
-            }
+        .navbar__sublink {
+          visibility: hidden;
+          opacity: 0;
         }
 
-        .navbar__links {
-            display: flex;
-            justify-content: flex-end;
-
-            @include respond(phone) {
-                display: none;
-            }
-
-            .navbar__link--wrapper {
-                display: flex;
-                margin: 0 1rem;
-                padding: 0.5rem 0;
-                position: relative;
-
-                .navbar__link {
-                    text-transform: capitalize;
-                    color: $primary-1;
-                    font-weight: bold;
-                    letter-spacing: $letter-spacing;
-                    transition: $transition;
-
-                    &:hover {
-                        color: $primary-2;
-                        box-shadow: 0px 2px $primary-2;
-                    }
-                }
-
-                .navbar__sublink {
-                    visibility: hidden;
-                    opacity: 0;
-                }
-
-                &:hover {
-                    .navbar__sublink {
-                        visibility: visible;
-                        opacity: 100%;
-                        transition: $sub-links-transition;
-                    }
-                }
-            }
+        &:hover {
+          .navbar__sublink {
+            visibility: visible;
+            opacity: 100%;
+            transition: $sub-links-transition;
+          }
         }
+      }
     }
+  }
 }
-

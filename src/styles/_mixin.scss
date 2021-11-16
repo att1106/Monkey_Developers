@@ -7,9 +7,9 @@
             @content;
         }
     }
-
+//calc(#{$tablet}-1px)
     @if $breakpoint == mobile {
-        @media only screen and (max-width: $tablet) {
+        @media only screen and (max-width: calc(#{$tablet} - 1px)) {
             @content;
         }
     }

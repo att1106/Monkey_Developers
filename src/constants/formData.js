@@ -1,5 +1,6 @@
-const form = [
+export const form = [ 
     {
+        id: 1,
         label: "Vorname",
         type: "text",
         textarea: false,
@@ -54,6 +55,4 @@ const form = [
             }
         },
     },
-]
-
-export { form };
+];

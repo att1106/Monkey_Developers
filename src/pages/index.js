@@ -21,7 +21,9 @@ import formData from "../constants/formData";
 import SidebarWrapper from "../components/fixedSidebar/SidebarWrapper";
 import ContentWrapper from "../components/contentWrapper/ContentWrapper";
 import Profile from "../components/profile/Profile";
+import Features from "../components/features/Features";
 import Footer from "../components/footer/Footer";
+import CookieConsent from "react-cookie-consent";
 
 // const firstOptions = {
 //   renderNode: {
@@ -47,14 +49,17 @@ import Footer from "../components/footer/Footer";
 
 const IndexPage = () => {
   return (
-    <div className="page__body">
+    <Layout buttonLink="/kontakt" buttonText="Erstellt mir eine Website">
       <main>
-        <SidebarWrapper />
+        <Navbar />
+        {/* <CookieConsent /> */}
+        {/* <SidebarWrapper /> */}
         <ContentWrapper />
+        <Features />
         <Profile />
-        <Footer />
+        {/* <Footer /> */}
       </main>
-    </div>
+    </Layout>
   );
 };
 

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---cache-dev-404-page-js",
     "path": "/dev-404-page/",
-    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/404.html"},{"path":"/404/"},{"path":"/datenschutzerklaerung/"},{"path":"/impressum/"},{"path":"/"}]}},"pageContext":{}},
+    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/404.html"},{"path":"/404/"},{"path":"/datenschutzerklaerung/"},{"path":"/impressum/"},{"path":"/"},{"path":"/kontakt/"},{"path":"/leistungen/"}]}},"pageContext":{}},
     "staticQueryHashes": []}

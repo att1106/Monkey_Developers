@@ -1,40 +1,49 @@
 @import "../../styles/global.scss";
 @import "../../styles/mixin";
 
-$content-wrapper-padding: 5% 0;
+$content-wrapper-padding: $margin-top-section 0;
 $content-wrapper-icon__size: 1.6rem; 
 
-.example {
-  position: relative;
-  padding: $content-wrapper-padding;
-  color: $primary-1;
+.project-section{
 
-  &-image-container {
-    max-width: 75%;
-    display: block;
-    margin: 0 auto 5% auto;
-  }
-
-  &-text {
-    margin: 0 12.5%;
-    &__title {
-      font-weight: 700;
+  .example {
+    position: relative;
+    padding: $content-wrapper-padding;
+    color: $primary-1;
+  
+    &-image-container {
+      max-width: 75%;
+      display: block;
+      margin: 0 auto 5% auto;
+  
+      .example-image__image{
+        max-width: 100%;
+        max-height: 80vh;
+        margin: 0 auto;
+      }
     }
-    &__title,
-    &__description {
-      font-size: 0.9rem;
+  
+    &-text {
+      margin: 0 12.5%;
+      &__title {
+        font-weight: 700;
+      }
+      &__title,
+      &__description {
+        font-size: 0.9rem;
+      }
     }
-  }
-  &-url {
-    position: absolute;
-    font-size: $content-wrapper-icon__size;
-    text-align: end;
-    right: 3%;
-    bottom: 1%;
-
-    &:hover {
-      @include transition-ease;
-      transform: rotate(15deg);
+    &-url {
+      position: absolute;
+      font-size: $content-wrapper-icon__size;
+      text-align: end;
+      right: 5%;
+      bottom: 5%;
+  
+      &:hover {
+        @include transition-ease;
+        transform: rotate(15deg);
+      }
     }
   }
 }

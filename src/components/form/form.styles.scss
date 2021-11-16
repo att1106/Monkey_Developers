@@ -1,7 +1,8 @@
 @import "../../styles/global.scss";
+// @import "../../styles/global.scss";
 
 $form-padding: 2rem;
-$form-background-color: white;
+$form-background-color: $contact-page-bgcolor;
 $form-border-radius: 0.5rem;
 
 form {

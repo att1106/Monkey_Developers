@@ -14,7 +14,8 @@ const Input = ({
   return (
     <div className="input-form">
       <label className="input-label">
-        {label}{validation.required?.value && " *"}
+        {label}
+        {validation.required?.value && " *"}
         <div
           className={`input-field${textarea === true ? " textarea-field" : ""}`}
         >
@@ -35,7 +36,11 @@ const Input = ({
             />
           )}
         </div>
-        {errors[name] && <span role="alert" className="input-validation-error" >{errors[name].message}</span>}
+        {errors[name] && (
+          <span role="alert" className="input-validation-error">
+            {errors[name].message}
+          </span>
+        )}
       </label>
     </div>
   );

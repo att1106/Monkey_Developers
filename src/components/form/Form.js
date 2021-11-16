@@ -1,10 +1,12 @@
 import React from "react";
-//import { useForm } from "../../hooks/useForm";
+// import { useForm } from "../../hooks/useForm";
 import { useForm } from "react-hook-form";
 import Input from "../input/Input";
 import Button from "../button/Button";
 import "./form.styles.scss";
 import { AiOutlineClose } from "react-icons/ai";
+
+
 
 const Form = ({ handleIsOpen, form }) => {
   const {
@@ -19,11 +21,13 @@ const Form = ({ handleIsOpen, form }) => {
 
   console.log("errors", errors);
 
+
   return (
     <form>
       <button type="button" className="modal-close__btn">
         <AiOutlineClose onClick={handleIsOpen} />
       </button>
+
       {form.map((input, index) => (
         <Input
           key={index}
@@ -45,3 +49,4 @@ const Form = ({ handleIsOpen, form }) => {
 };
 
 export default Form;
+ 

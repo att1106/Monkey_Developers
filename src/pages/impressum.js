@@ -6,8 +6,8 @@ import { impressungText } from "../constants/impressung";
 const Impressum = () => {
   return (
     <>
-      <Layout>
-        <main className="impressum">
+      <Layout buttonLink= "/" buttonText= "Zurück zur Startseite">
+        <main className="page impressum">
           <TextCard title="Impressum" cardText={impressungText} />
         </main>
       </Layout>

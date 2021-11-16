@@ -3,7 +3,7 @@
 .toggle-btn {
     display: none;
 
-    @include respond(phone) {
+    @include respond(mobile) {
         display: flex;
         font-size: 2rem;
         background: transparent;

@@ -1,19 +1,16 @@
 import React from "react";
 import Footer from "../footer/Footer";
-import Navbar from "../navbar/Navbar";
+import Navbar from "../navbar/Navbar_Test";
 import { Link } from "gatsby";
 import SidebarWrapper from "../fixedSidebar/SidebarWrapper";
 import "./layout.styles.scss";
 
-const Layout = ({ children }) => {
+const Layout = ({ buttonLink, buttonText, children }) => {
+  console.log(buttonLink);
+  console.log(buttonText);
   return (
-    <>
-      <SidebarWrapper />
-      <div className="company-logo_container">
-        {/* <Link className="company-logo" to="/">
-          <img src={logo} alt="logo" />
-        </Link> */}
-      </div>
+    <> 
+      <SidebarWrapper buttonText={buttonText} buttonLink={buttonLink} />
       {children}
       <Footer />
     </>

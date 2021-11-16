@@ -10,10 +10,10 @@ $sidebar-wrapper-padding: 3rem;
 
   &__about-container {
     .button {
-      display: block;
-      width: fit-content;
-      margin: 4rem auto;
+      display: inline-block;
+      padding: 0.5rem;
       background-color: $primary-2;
+      margin: 4rem auto;
     }
   }
 

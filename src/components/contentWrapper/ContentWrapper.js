@@ -1,36 +1,71 @@
 import React from "react";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { useStaticQuery, graphql } from "gatsby";
+import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import { examplesData } from "../../constants/examplesData";
 import { IoRocketOutline } from "react-icons/io5";
 
+
 import "./contentWrapper.styles.scss";
 
+const query = graphql`
+  {
+    allFile(
+      filter: { relativeDirectory: { regex: "/websites/" } }
+      sort: { fields: name }
+    ) {
+      totalCount
+      nodes {
+        name
+        childImageSharp {
+          gatsbyImageData(layout: FIXED, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+`;
+
 const ContentWrapper = () => {
+  const data = useStaticQuery(query);
+  const nodes = data.allFile.nodes;
+
   return (
-    <div>
-      {examplesData.map((example) => {
+    <section className="project-section" id="projekte">
+      {/* {nodes.map((image, index) => {
+        const { name } = image;
+        const pathToImage = getImage(image);
+        console.log("beispiel path", {pathToImage})
         return (
-          <section
+          <article key={index}>
+            <p>{name}</p>
+            <GatsbyImage image={pathToImage} />
+          </article>
+        );
+      })} */}
+
+      {examplesData.map((example, index) => {
+        {
+          /* console.log(nodes[index].name); */
+        }
+        const image = nodes[index];
+        const pathToImage = getImage(image);
+        {
+          /* console.log({ pathToImage }); */
+        }
+
+        return (
+          <article
             key={example.id}
             className="example"
             style={{ backgroundColor: example.bgColor }}
           >
             <div className="example-image-container">
-              <StaticImage
-                src="../../images/pexels-photo-6072557.jpeg"
+              <GatsbyImage
+                image={pathToImage}
                 alt="example-image"
-                className="example-image"
-                placeholder="blurred"
+                className="example-image__image"
                 objectFit="contain"
               />
             </div>
-
-            {/* <GatsbyImage
-              src={`../../images/${example.image}`}
-              alt="example-image"
-              //   placeholder="blurred"
-              objectFit="contain"
-            /> */}
             <div className="example-text">
               <p className="example-text__title">{example.title}</p>
               <p className="example-text__description">
@@ -42,10 +77,10 @@ const ContentWrapper = () => {
                 <IoRocketOutline />
               </a>
             </p>
-          </section>
+          </article>
         );
       })}
-    </div>
+    </section>
   );
 };
 

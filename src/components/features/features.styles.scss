@@ -1,0 +1,45 @@
+@import "../../styles/global.scss";
+@import "../../styles/mixin";
+@import "../../styles/variable";
+
+.features {
+  padding-top: $margin-top-section;
+  margin: 1rem auto;
+  display: flex;
+  .feature {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 1rem;
+    //   border-radius: $border-radius;
+    // box-shadow: 0 4px 10px black;
+    &-icon {
+      height: 5rem;
+      margin: 2rem auto;
+    }
+    p {
+      padding: 0.5rem;
+    }
+  }
+}
+
+
+@include respond(desktop) {
+  .features {
+    flex-direction: row;
+    align-self: start;
+    .feature {
+      width: 30%;
+    }
+  }
+}
+
+@include respond(mobile) {
+  .features {
+    flex-direction: column;
+    .feature {
+      width: 75%;
+      margin: 2rem auto;
+    }
+  }
+}

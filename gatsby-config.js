@@ -1,34 +1,49 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "gatsby-first-template",
+    title: "Monkey Devlopers",
+    description: "Homepage of Monkey Developers",
+    author: "AT & Duc",
+    person: { name: "AT", age: 29 },
+    simpleData: ["item1", "item2"],
+    complexData: [
+      { name: "AT", age: 29 },
+      { name: "Duc", age: 29 },
+    ],
   },
   plugins: [
     {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: 'UA-210294931-1', // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-google-analytics', // default
+          trackingId: "UA-210294931-1", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-analytics", // default
           anonymize: true, // default
-          allowAdFeatures: false // default
+          allowAdFeatures: false, // default
         },
         // defines the environments where the tracking should be available  - default is ["production"]
-        environments: ['production', 'development']
+        environments: ["production", "development"],
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
           include: /svg/,
-          omitKeys: ['xmlnsDc', 'xmlnsCc', 'xmlnsRdf', 'xmlnsSvg', 'xmlnsSodipodi', 'xmlnsInkscape']
-        }
-      }
+          omitKeys: [
+            "xmlnsDc",
+            "xmlnsCc",
+            "xmlnsRdf",
+            "xmlnsSvg",
+            "xmlnsSodipodi",
+            "xmlnsInkscape",
+          ],
+        },
+      },
     },
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
@@ -39,6 +54,13 @@ module.exports = {
       options: {
         name: "images",
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "websites",
+        path: `${__dirname}/src/images/websites`,
       },
     },
     // {
@@ -57,7 +79,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `src/images/icon.png`
+        icon: `src/images/icon.png`,
       },
     },
     {
