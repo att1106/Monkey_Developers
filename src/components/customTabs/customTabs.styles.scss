@@ -1,0 +1,36 @@
+@import "../../styles/global.scss";
+@import "../../styles/mixin";
+@import "../../styles/variable";
+
+// section {
+//     width: 100vw;
+//     background-color: grey;
+// }
+
+.tabs-btn-container {
+  height: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem auto;
+
+  .tabs-btn {
+    margin-right: 1rem;
+    color: $primary-2;
+    font-family: inherit;
+    font-size: 1.5rem;
+    background: transparent;
+    border-color: transparent;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lemonchiffon;
+    //   background-color: red;
+
+      color: black;
+      box-shadow: 0 2px;
+    }
+  }
+}

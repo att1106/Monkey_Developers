@@ -110,17 +110,17 @@ body {
 }
 //pages
 
-.page {
-  @include respond(desktop) {
-    padding: 10vh 10vw;
-  }
-  @include respond(mobile) {
-    padding: 10vh 10vw;
-  }
-  @include respond(phone) {
-    padding: 10vh 10vw;
-  }
-}
+// .page {
+//   @include respond(desktop) {
+//     padding: 5vh 3vw;
+//   }
+//   @include respond(mobile) {
+//     padding: 10vh 10vw;
+//   }
+//   @include respond(phone) {
+//     padding: 10vh 10vw;
+//   }
+// }
 
 .button-2 {
   display: block;
