@@ -22,7 +22,7 @@ export const CustomTabsData = [
         description: "Sevice 1.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
         },
     ],
-    imageURL: "../images/features/features_website.svg"
+    image: Website
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ export const CustomTabsData = [
         description: "Sevice 2.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
         },
     ],
-    imageURL: "../images/features/features_services.svg"
+    image: Services
   },
   {
     id: 3,
@@ -64,6 +64,6 @@ export const CustomTabsData = [
         description: "Sevice 3.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
         },
     ],
-    imageURL: "../images/features/features_seo.svg"
+    image: Seo
   }  
 ];

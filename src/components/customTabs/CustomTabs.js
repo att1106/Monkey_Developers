@@ -13,52 +13,32 @@ const CustomTabs = () => {
 
   return (
     <section>
-      {/* <div className="tabs-image-container">
-        <img src={imageURL} alt="image"/>
-      </div> */}
-
       <div className="tabs-btn-container">
-        {CustomTabsData.map((button, index) => {
+        {CustomTabsData.map((tab, index) => {
           return (
-            <button
+            <div
               key={index}
               className={index === value ? "tabs-btn active-btn" : "tabs-btn"}
               onClick={() => setValue(index)}
             >
-              {button.title}
-            </button>
+              <tab.image className="tabs-icon" />
+              <h4>{tab.title}</h4>
+            </div>
           );
         })}
       </div>
 
-      <article>
+      <article className="tab-text-container">
         <h3>{header}</h3>
         {infos.map((item, index) => {
           return (
-            <span key={index}>
-              <FaAngleDoubleRight/>
+            <div key={index} className="tab-text">
+              <FaAngleDoubleRight className="tab-text-bullet" />
               <p>{item.description}</p>
-            </span>
+            </div>
           );
         })}
       </article>
-
-      {/* {CustomTabsData.map((tab, index) => {
-        return (
-          <article key={index}>
-            <h2>{tab.header}</h2>
-
-            {tab.infos.map((item, index) => {
-              return (
-                <span key={index}>
-                  <FaAngleDoubleRight />
-                  <p>{item.description}</p>
-                </span>
-              );
-            })}
-          </article>
-        );
-      })} */}
     </section>
   );
 };

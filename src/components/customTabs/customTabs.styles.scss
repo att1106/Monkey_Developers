@@ -2,35 +2,51 @@
 @import "../../styles/mixin";
 @import "../../styles/variable";
 
-// section {
-//     width: 100vw;
-//     background-color: grey;
-// }
-
 .tabs-btn-container {
-  height: 2rem;
+  margin: 5rem auto 2rem;
   display: flex;
-  justify-content: flex-start;
-  margin: 2rem auto;
+  justify-content: baseline;
+  align-items: baseline;
+
+  .tabs-icon {
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: 0.5rem;
+  }
 
   .tabs-btn {
-    margin-right: 1rem;
-    color: $primary-2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    color: $primary-1;
     font-family: inherit;
     font-size: 1.5rem;
-    background: transparent;
-    border-color: transparent;
+    background-color: grey;
+    opacity: 0.6;
     text-decoration: none;
-    text-transform: capitalize;
-    border: none;
 
     &:hover {
       cursor: pointer;
-      background-color: lemonchiffon;
-    //   background-color: red;
+      color: $primary-2;
+    }
+  }
+  & .active-btn {
+    opacity: 1;
+    border-bottom: 4px solid $primary-2;
+  }
+}
 
-      color: black;
-      box-shadow: 0 2px;
+.tab-text-container {
+  .tab-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .tab-text-bullet {
+      font-size: 1.5rem;
+      margin-right: 1rem;
     }
   }
 }
