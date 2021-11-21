@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { StaticImage } from "gatsby-plugin-image";
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 import { CustomTabsData } from "../../constants/customTabsData";
@@ -22,7 +21,7 @@ const CustomTabs = () => {
               onClick={() => setValue(index)}
             >
               <tab.image className="tabs-icon" />
-              <h4>{tab.title}</h4>
+              <h5>{tab.title}</h5>
             </div>
           );
         })}

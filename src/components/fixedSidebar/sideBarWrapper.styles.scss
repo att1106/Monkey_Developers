@@ -1,11 +1,11 @@
 @import "../../styles/global.scss";
+@import "../../styles/_variable.scss";
 
 $sidebar-wrapper-padding: 3rem;
 
 .sidebar-wrapper {
   color: $primary-2;
   background-color: $primary-1;
-  display: block;
   padding: $sidebar-wrapper-padding;
 
   &__about-container {
@@ -15,19 +15,5 @@ $sidebar-wrapper-padding: 3rem;
       background-color: $primary-2;
       margin: 4rem auto;
     }
-  }
-
-  @include respond(desktop) {
-    position: fixed;
-    width: $sidebar-wrapper-width;
-    height: 100%;
-    left: 0;
-    top: 0;
-    bottom: 0;
-  }
-
-  @include respond(phone) {
-    position: relative;
-    width: 100%;
   }
 }

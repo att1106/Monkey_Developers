@@ -2,8 +2,8 @@
 @import "../../styles/mixin";
 @import "../../styles/variable";
 
-.features {
-  padding-top: $margin-top-section;
+.features__container {
+  padding: $margin-top-section $padding-index-rl 0;
   margin: 1rem auto;
   display: flex;
   .feature {
@@ -11,21 +11,18 @@
     flex-direction: column;
     text-align: center;
     margin: 0 1rem;
-    //   border-radius: $border-radius;
-    // box-shadow: 0 4px 10px black;
-    &-icon {
+    &__icon {
       height: 5rem;
       margin: 2rem auto;
     }
-    p {
-      padding: 0.5rem;
-    }
+    // p {
+    //   padding: 0.5rem;
+    // }
   }
 }
 
-
 @include respond(desktop) {
-  .features {
+  .features__container {
     flex-direction: row;
     align-self: start;
     .feature {
@@ -35,11 +32,11 @@
 }
 
 @include respond(mobile) {
-  .features {
+  .features__container {
     flex-direction: column;
     .feature {
       width: 75%;
-      margin: 2rem auto;
+      margin: 1rem auto;
     }
   }
 }

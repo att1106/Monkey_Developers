@@ -6,8 +6,7 @@ import SidebarWrapper from "../fixedSidebar/SidebarWrapper";
 import "./layout.styles.scss";
 
 const Layout = ({ buttonLink, buttonText, children }) => {
-  console.log(buttonLink);
-  console.log(buttonText);
+
   return (
     <> 
       <SidebarWrapper buttonText={buttonText} buttonLink={buttonLink} />

@@ -5,29 +5,38 @@ $icon-plus-text-height: auto;
 $icon-plus-text-min-width: 8rem;
 $icon-plus-text-padding: 0.5rem;
 $text-padding: 0.2rem;
+$icon-margin: 1rem;
 
 .icon-plus-text {
+  display: flex;
+  width: 100%;
+  height: $icon-plus-text-height;
+  // padding: $icon-plus-text-padding;
+  margin-bottom: 3rem;
+
+  .icon__box {
     display: flex;
-    height: $icon-plus-text-height;
-    padding: $icon-plus-text-padding;
+    align-items: center;
+    justify-content: center;
+    width: $icon-width;
+    font-size: $icon-width;
+    height: auto;
+    margin-right: $icon-margin;
+  }
+  .text__box {
+    min-width: $icon-plus-text-min-width;
+    @include flex-align-column(base-left);
 
-    .icon__box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: $icon-width;
-        height: auto;
+    span {
+      padding: $text-padding;
     }
-    .text__box {
-        min-width: $icon-plus-text-min-width;
-        @include flex-align-column(base-left);
 
-        span {
-            padding: $text-padding;
-        }
-
-        .text__box--main {
-            font-weight: bold;
-        }
+    .text__box--main {
+      font-weight: bold;
     }
+  }
+
+  .right {
+    margin-left: $icon-margin;
+  }
 }

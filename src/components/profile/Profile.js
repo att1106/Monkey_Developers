@@ -35,7 +35,7 @@ const Profile = () => {
 
         return (
           <div key={profile.id} className="profile">
-            <figure className="profile-figure">
+            <figure className="profile__figure">
               {/* <StaticImage
                 src="../../images/james.jpeg"
                 alt={profile.alt}
@@ -49,27 +49,24 @@ const Profile = () => {
               <GatsbyImage
                 image={pathToImage}
                 alt={profile.alt}
-                className="profile-figure-image"
+                className="profile__figure__image"
                 placeholder="none"
                 style={{ height: "100%", width: "100%" }}
                 imgStyle={{ objectFit: "cover" }}
                 // quality={100}
               />
-              <figcaption className="profile-figure-image__caption">
+              <figcaption className="profile__figure__image__caption">
                 {profile.name}
               </figcaption>
             </figure>
 
-            <div className="profile-text">
+            <div className="profile__text">
               <h2>{profile.capture}</h2>
               <p>{profile.text}</p>
             </div>
           </div>
         );
       })}
-      {/* <GatsbyImage image={image} alt={imgAlt} placeholder="none" imgStyle={{ "borderRadius": "50%" }} quality={100} />
-            <h2>{name}</h2>
-            <p className="profile-text">{text}</p> */}
     </section>
   );
 };

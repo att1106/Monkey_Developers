@@ -19,7 +19,7 @@ import Navbar from "../components/navbar/Navbar";
 import formData from "../constants/formData";
 
 import SidebarWrapper from "../components/fixedSidebar/SidebarWrapper";
-import ContentWrapper from "../components/contentWrapper/ContentWrapper";
+import ProjectWrapper from "../components/projectWrapper/ProjectWrapper";
 import Profile from "../components/profile/Profile";
 import Features from "../components/features/Features";
 import Footer from "../components/footer/Footer";
@@ -49,17 +49,34 @@ import CookieConsent from "react-cookie-consent";
 
 const IndexPage = () => {
   return (
-    <Layout buttonLink="/kontakt" buttonText="Erstellt mir eine Website">
-      <main>
+    <div className="page index">
+      {/* <Layout buttonLink="/kontakt" buttonText="Erstellt mir eine Website"> */}
+      {/* </Layout> */}
+      {/* buttonLink="/kontakt" buttonText="Erstellt mir eine Website" */}
+      <SidebarWrapper
+        buttonText="Erstellt mir eine Website"
+        buttonLink="/kontakt"
+      />
+      <main className="index__container">
         <Navbar />
-        {/* <CookieConsent /> */}
-        {/* <SidebarWrapper /> */}
-        <ContentWrapper />
+        <ProjectWrapper />
         <Features />
         <Profile />
-        {/* <Footer /> */}
+        <Footer />
       </main>
-    </Layout>
+    </div>
+
+    // <Layout buttonLink="/kontakt" buttonText="Erstellt mir eine Website">
+    //   <main>
+    //     <Navbar />
+    //     {/* <CookieConsent /> */}
+    //     {/* <SidebarWrapper /> */}
+    //     <ContentWrapper />
+    //     <Features />
+    //     <Profile />
+    //     {/* <Footer /> */}
+    //   </main>
+    // </Layout>
   );
 };
 

@@ -12,7 +12,7 @@ footer {
     width: $footer-width;
     background: $primary-2;
     padding: $footer-padding;
-    min-width: $min-width;
+    // min-width: $min-width;
     max-width: 100%;
 
     @include respond(phone) {

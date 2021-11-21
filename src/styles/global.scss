@@ -1,6 +1,9 @@
 @import "./_variable.scss";
 @import "./mixin";
 
+// BEM (Block__Element--Modifier) convention:
+//
+
 *,
 ::after,
 ::before {
@@ -91,38 +94,69 @@ p {
   line-height: $text-line-height;
 }
 
+//Layout
 body {
   font-family: $font-family;
   color: $primary-2;
-  min-width: $min-width;
+  // min-width: $min-width;
   // margin-top: $navbar-height;
   // background-color: red;
 
-  @include respond(desktop) {
-    overflow: visible;
-    margin-left: $sidebar-wrapper-width;
-  }
+  // @include respond(desktop) {
+  //   overflow: visible;
+  //   margin-left: $sidebar-wrapper-width;
+  // }
 
-  @include respond(phone) {
-    position: relative;
-    width: 100%;
-  }
+  // @include respond(phone) {
+  //   position: relative;
+  //   width: 100%;
+  // }
 }
 //pages
+
+.index {
+  display: flex;
+  width: 100%;
+  @include respond(desktop) {
+    flex-direction: row;
+    .sidebar-wrapper {
+      flex: 0 0 $sidebar-width;
+      position: sticky;
+      width: $sidebar-width;
+      height: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+    .index__container {
+      max-width: $index-width;
+      flex: 1;
+    }
+  }
+
+  @include respond(mobile) {
+    flex-direction: column;
+  }
+}
 
 // .page {
 //   @include respond(desktop) {
 //     padding: 5vh 3vw;
 //   }
 //   @include respond(mobile) {
-//     padding: 10vh 10vw;
-//   }
-//   @include respond(phone) {
-//     padding: 10vh 10vw;
+//     padding: 10vh 5vw;
 //   }
 // }
 
-.button-2 {
+//hero images
+.hero-image {
+  display: block;
+  width: 80%;
+  height: auto;
+  margin: 2rem auto;
+}
+
+.btn-2 {
   display: block;
   color: $primary-2;
   font-family: inherit;
