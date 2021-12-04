@@ -26,15 +26,18 @@ $background-color: none;
 
     .accordion__header-container {
         display: flex;
+        flex-direction: row;
         align-items: center;
         transition: $transition;
-
+        margin-bottom: 0.5rem;
+     
         .accordion__header {
             margin-right: auto;
         }
 
         .accordion-icon {
             transition: transform 0.6s ease;
+            font-size: 1.5rem;          
         }
 
         .rotate {

@@ -1,5 +1,5 @@
 @import "./_variable.scss";
-@import "./mixin";
+@import "./mixin.scss";
 
 // BEM (Block__Element--Modifier) convention:
 //
@@ -112,49 +112,8 @@ body {
   //   width: 100%;
   // }
 }
-//pages
-
-.index {
-  display: flex;
-  width: 100%;
-  @include respond(desktop) {
-    flex-direction: row;
-    .sidebar-wrapper {
-      flex: 0 0 $sidebar-width;
-      position: sticky;
-      width: $sidebar-width;
-      height: 100%;
-      left: 0;
-      top: 0;
-      bottom: 0;
-    }
-    .index__container {
-      max-width: $index-width;
-      flex: 1;
-    }
-  }
-
-  @include respond(mobile) {
-    flex-direction: column;
-  }
-}
-
-// .page {
-//   @include respond(desktop) {
-//     padding: 5vh 3vw;
-//   }
-//   @include respond(mobile) {
-//     padding: 10vh 5vw;
-//   }
-// }
 
 //hero images
-.hero-image {
-  display: block;
-  width: 80%;
-  height: auto;
-  margin: 2rem auto;
-}
 
 .btn-2 {
   display: block;
@@ -206,4 +165,186 @@ li > p {
 
 ol {
   margin-left: 15px;
+}
+
+/*##########
+Pages
+##########*/
+
+.index {
+  display: flex;
+  width: 100%;
+  @include respond(desktop) {
+    flex-direction: row;
+    .sidebar-wrapper {
+      flex: 0 0 $sidebar-width;
+      position: sticky;
+      width: $sidebar-width;
+      height: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+    .index__container {
+      max-width: $index-width;
+      flex: 1;
+    }
+  }
+
+  @include respond(mobile) {
+    flex-direction: column;
+  }
+}
+
+.page {
+  section {
+    margin: 10% auto;
+  }
+  @include respond(desktop) {
+    width: $page-width;
+    padding: $page-padding-desktop;
+    // padding: 5vh 10vw;
+  }
+  @include respond(mobile) {
+    padding: $page-padding-mobile;
+  }
+}
+
+.leistungen {
+  ul {
+    margin-top: $li-margin-bottom;
+    // margin-left: $li-margin-bottom;
+  }
+  &__list {
+    @include flex-align-row(base-middle);
+    &:not(:last-child) {
+      margin-bottom: $li-margin-bottom;
+    }
+    &--icon {
+      display: flex;
+      font-size: $li-fontSize;
+      margin-right: $li-bullet-margin-right;
+    }
+
+    // @include respond(mobile) {
+    //   &--icon {
+    //     font-size: 1rem;
+    //     margin-right: $li-bullet-margin-right;
+    //   }
+    // }
+  }
+
+  a {
+    color: black;
+    &:hover,
+    &:visited {
+      color: black;
+    }
+  }
+
+  //Message Box
+
+  &--message {
+    display: flex;
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    &__container {
+      display: flex;
+      height: 70%;
+      align-items: baseline;
+
+      &--text {
+        text-align: center;
+        .leistungen--message__icon {
+          font-size: 2rem;
+          margin: 5% auto 0;
+        }
+      }
+    }
+
+    @include respond(desktop) {
+      height: 100vh;
+      width: 100vw;
+      margin-left: calc((-100vw + $page-width) / 2);
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      overflow: visible;
+
+      &__container--text {
+        flex: 0 10% 40%;
+        .leistungen--message__icon {
+          font-size: 2rem;
+          margin: 5% auto 0;
+        }
+      }
+
+      &__container {
+        &--desktop {
+          display: flex;
+          height: 70vh;
+          align-items: baseline;
+          &__image {
+            max-height: 100%;
+          }
+        }
+
+        &--mobile {
+          display: none;
+          opacity: 0;
+        }
+      }
+    }
+
+    @include respond(mobile) {
+      flex-direction: column;
+      margin-bottom: 3rem;
+
+      &__container {
+        &--text {
+          margin-top: 2rem;
+        }
+
+        &--desktop {
+          display: none;
+          opacity: 0;
+        }
+        &--mobile {
+          &__image {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  //Background Infos
+
+  &__bginfo {
+    &__infobox {
+      display: flex;
+
+      h3 {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      &--text {
+        @include flex-align-column(base-left);
+      }
+
+      &--icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        font-size: 2rem;
+        height: auto;
+        margin-right: 1rem;
+      }
+    }
+  }
 }

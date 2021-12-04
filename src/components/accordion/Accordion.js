@@ -10,7 +10,7 @@ const Accordion = ({ renderHeader = () => "Accordio title", renderContent = () =
         setIsOpen(!isOpen)
     }
 
-    const contentRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef(null);
 
     useEffect(() => {
         contentRef.current.style.maxHeight = isOpen ? `${contentRef.current.scrollHeight}px` : '0px'

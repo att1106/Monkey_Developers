@@ -34,10 +34,17 @@ Width
 $sidebar-width: 25%;
 $index-width: 75%;
 
+//pages
+$page-width: 100%;
+
+
+
 /*##########
 Paddings
 ##########*/
 $padding-index-rl: 10%;
+$page-padding-desktop: 0 10%;
+$page-padding-mobile: 5% 10%;
 
 
 /*##########
@@ -66,6 +73,12 @@ Footer
 $footer-height: 10rem;
 $footer-width: 100vw;
 $footer-background-color: $secondary-color;
+
+
+//####### double arrow unordered list #######
+$li-margin-bottom: 2rem;
+$li-fontSize: 1.5rem;
+$li-bullet-margin-right: 1rem;
 
 /*##########
 Box

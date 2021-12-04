@@ -49,7 +49,7 @@ import CookieConsent from "react-cookie-consent";
 
 const IndexPage = () => {
   return (
-    <div className="page index">
+    <div className="index">
       {/* <Layout buttonLink="/kontakt" buttonText="Erstellt mir eine Website"> */}
       {/* </Layout> */}
       {/* buttonLink="/kontakt" buttonText="Erstellt mir eine Website" */}

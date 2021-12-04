@@ -93,10 +93,14 @@
 @mixin flex-align-row($align-direction) {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    
+    @if $align-direction == wrap-base-middle {
+        flex-wrap: wrap;
+        align-items: center;
+    }
     @if $align-direction == base-middle {
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
@@ -111,3 +115,4 @@
 @mixin underline-font($color) {
     box-shadow: 0px 2px $color;
 }
+

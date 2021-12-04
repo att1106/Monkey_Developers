@@ -9,7 +9,7 @@ const Layout = ({ buttonLink, buttonText, children }) => {
 
   return (
     <> 
-      <SidebarWrapper buttonText={buttonText} buttonLink={buttonLink} />
+      {/* <SidebarWrapper buttonText={buttonText} buttonLink={buttonLink} /> */}
       {children}
       <Footer />
     </>
