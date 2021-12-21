@@ -18,7 +18,6 @@ const Navbar = ({
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
-  console.log("isOpen", isOpen);
 
   const { visible } = useScrollNavbar();
 
